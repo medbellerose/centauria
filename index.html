@@ -3,350 +3,301 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CENTAURIA Nutrición Clínica. Atención nutricional personalizada, nutrición basada en evidencia y programas de bienestar para empresas.">
-  <meta name="theme-color" content="#101d4b">
+  <meta name="description" content="CENTAURIA Nutrición Clínica. Consultas nutricionales individuales y programas de nutrición y bienestar para empresas, con enfoque clínico y basado en evidencia.">
+  <meta name="theme-color" content="#f7f2fb">
   <title>CENTAURIA | Nutrición Clínica</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --navy: #101d4b;
-      --navy-2: #172b68;
-      --purple: #7416b8;
-      --purple-2: #9125cf;
-      --cyan: #08afd0;
-      --gold: #d9a62c;
-      --ink: #182347;
-      --muted: #66708b;
-      --pale: #f6f4fb;
-      --line: #e7e4ef;
-      --white: #fff;
-      --shadow: 0 18px 55px rgba(26, 29, 74, .10);
-      --radius: 22px;
+    :root{
+      --navy:#17234f;--purple:#761bb6;--purple2:#963bd0;--lilac:#eee3f7;
+      --lavender:#f7f2fb;--pale:#fcfaff;--gold:#d6a63b;--ink:#20294c;
+      --muted:#65708d;--line:#e8def0;--white:#fff;--shadow:0 16px 42px rgba(55,31,91,.10);
+      --radius:24px;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--ink); background: #fff; font-family: "DM Sans", sans-serif; line-height: 1.6; }
-    a { color: inherit; text-decoration: none; }
-    button, input, textarea { font: inherit; }
-    .container { width: min(1160px, calc(100% - 44px)); margin: 0 auto; }
-    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.94); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(20,29,75,.08); }
-    .nav { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: flex; align-items: center; min-width: 210px; }
-    .brand img { width: 205px; height: 78px; object-fit: contain; object-position: left center; }
-    .nav-links { display: flex; align-items: center; gap: 27px; font-size: .94rem; font-weight: 600; color: #20294d; }
-    .nav-links a { transition: color .2s; }
-    .nav-links a:hover { color: var(--purple); }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 13px 21px; border-radius: 999px; border: 1px solid transparent; font-weight: 700; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s; }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(91,26,150,.18); }
-    .btn-primary { color: #fff; background: linear-gradient(110deg, var(--purple), #4e168e); }
-    .btn-outline { color: var(--navy); border-color: var(--navy); background: rgba(255,255,255,.7); }
-    .menu-toggle { display: none; border: 0; background: none; color: var(--navy); font-size: 1.7rem; cursor: pointer; }
-    .hero { position: relative; overflow: hidden; background: radial-gradient(ellipse at 76% 35%, rgba(150,95,213,.20), transparent 35%), linear-gradient(115deg, #fbfaff 0%, #f3f0fa 52%, #e9f6fa 100%); }
-    .hero:before { content: ""; position: absolute; width: 540px; height: 540px; border: 1px solid rgba(210,163,48,.55); border-radius: 50%; right: 12%; top: -250px; }
-    .hero-grid { min-height: 510px; display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: 35px; position: relative; z-index: 1; padding-top: 40px; padding-bottom: 48px; }
-    .eyebrow { color: var(--purple); text-transform: uppercase; letter-spacing: .24em; font-size: .78rem; font-weight: 700; }
-    h1, h2, h3 { margin-top: 0; color: var(--navy); }
-    h1, h2 { font-family: "Playfair Display", Georgia, serif; }
-    h1 { font-size: clamp(2.65rem, 5vw, 4.6rem); line-height: 1.08; letter-spacing: -.035em; margin: 17px 0 18px; }
-    h1 span { color: var(--purple); }
-    .hero-copy { max-width: 590px; font-size: 1.08rem; color: #283251; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 27px; }
-    .hero-art { min-height: 390px; display: flex; align-items: center; justify-content: center; position: relative; }
-    .hero-art .logo-large { width: min(390px, 80%); filter: drop-shadow(0 18px 25px rgba(41,35,90,.12)); mix-blend-mode: multiply; }
-    .flower-orbit { position: absolute; width: 440px; height: 440px; border: 1px solid rgba(213,164,48,.7); border-radius: 50%; }
-    .floating-note { position: absolute; right: 0; top: 15%; background: rgba(255,255,255,.88); border: 1px solid rgba(255,255,255,.9); box-shadow: var(--shadow); border-radius: 16px; padding: 13px 17px; font-size: .88rem; font-weight: 600; color: var(--navy); }
-    .floating-note small { display: block; color: var(--muted); font-weight: 500; }
-    .trust-strip { background: var(--navy); color: #fff; }
-    .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 15px; padding: 18px 0; }
-    .trust-item { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: .91rem; }
-    .trust-item b { color: #e7c46c; font-size: 1.2rem; }
-    section { padding: 82px 0; }
-    .section-heading { text-align: center; max-width: 720px; margin: 0 auto 38px; }
-    .section-heading h2 { font-size: clamp(2rem, 3.4vw, 3rem); margin: 9px 0 10px; }
-    .section-heading p { color: var(--muted); margin: 0; }
-    .services { background: #fff; }
-    .service-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 17px; }
-    .service-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 25px 22px; background: linear-gradient(145deg,#fff,#fbfaff); transition: transform .2s, box-shadow .2s; }
-    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-    .service-icon { width: 58px; height: 58px; display: grid; place-items: center; border-radius: 18px; color: var(--purple); background: #f1e8fa; font-size: 1.65rem; margin-bottom: 18px; }
-    .service-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
-    .service-card p { color: var(--muted); font-size: .92rem; margin: 0; }
-    .about { background: linear-gradient(110deg,#f7f6fb,#fff 55%,#f5f1fa); }
-    .about-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 60px; align-items: center; }
-    .about-visual { min-height: 380px; border-radius: 28px; background: radial-gradient(circle at 50% 35%,#fff 0 22%,transparent 23%), linear-gradient(145deg,#e6f7fa,#eee4f8); display: grid; place-items: center; overflow: hidden; position: relative; }
-    .about-visual:after { content: "C"; position: absolute; font-family: Georgia,serif; font-size: 24rem; color: rgba(116,22,184,.07); line-height: 1; }
-    .about-visual img { position: relative; z-index: 1; width: 74%; max-height: 340px; object-fit: contain; border-radius: 16px; mix-blend-mode: multiply; }
-    .about-copy h2 { font-size: 2.6rem; margin-bottom: 12px; }
-    .credential { color: var(--purple); font-weight: 700; margin-bottom: 18px; }
-    .about-copy p { color: #535e79; }
-    .pill-list { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 25px; }
-    .pill { padding: 8px 13px; border: 1px solid #e3d8f0; border-radius: 999px; background: #fff; color: var(--navy); font-size: .85rem; font-weight: 600; }
-    .corporate { background: var(--navy); color: #fff; position: relative; overflow: hidden; }
-    .corporate:after { content: ""; position: absolute; width: 520px; height: 520px; border: 1px solid rgba(220,177,69,.35); border-radius: 50%; right: -150px; top: -250px; }
-    .corporate-grid { display: grid; grid-template-columns: 1fr .8fr; gap: 55px; align-items: center; position: relative; z-index: 1; }
-    .corporate h2 { color: #fff; font-size: 2.8rem; margin: 10px 0 14px; }
-    .corporate p { color: #d9def0; }
-    .corporate .eyebrow { color: #e8c66c; }
-    .corporate-list { list-style: none; padding: 0; margin: 23px 0 28px; display: grid; gap: 12px; }
-    .corporate-list li:before { content: "✓"; color: #e8c66c; font-weight: 800; margin-right: 12px; }
-    .corporate-panel { border: 1px solid rgba(255,255,255,.2); border-radius: 25px; padding: 30px; background: rgba(255,255,255,.08); backdrop-filter: blur(10px); }
-    .corporate-panel .big-icon { font-size: 3rem; color: #e8c66c; }
-    .corporate-panel h3 { color: #fff; margin: 12px 0 8px; }
-    .contact { background: #faf9fc; }
-    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 45px; align-items: start; }
-    .contact h2 { font-size: 2.6rem; }
-    .contact-info { color: var(--muted); }
-    .contact-form { background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    label { display: block; color: var(--navy); font-weight: 700; font-size: .87rem; margin: 0 0 6px; }
-    input, textarea, select { width: 100%; border: 1px solid #dcdbea; border-radius: 12px; padding: 12px 13px; color: var(--ink); background: #fff; outline: none; margin-bottom: 15px; }
-    input:focus, textarea:focus, select:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(116,22,184,.1); }
-    textarea { min-height: 110px; resize: vertical; }
-    .form-hint { color: var(--muted); font-size: .78rem; margin: 10px 0 0; }
-    footer { background: #0b153b; color: #dce2f7; padding: 34px 0; }
-    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .footer-brand { color: #fff; font-family: "Playfair Display",serif; font-size: 1.5rem; letter-spacing: .08em; }
-    footer small { color: #aeb8d8; }
-    .whatsapp { position: fixed; z-index: 30; right: 22px; bottom: 22px; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: #20b86a; color: white; font-size: 1.7rem; box-shadow: 0 10px 25px rgba(0,0,0,.2); }
-    @media (max-width: 950px) {
-      .nav-links { gap: 14px; font-size: .86rem; }
-      .nav > .btn { padding: 11px 15px; }
-      .service-grid { grid-template-columns: repeat(2,1fr); }
-      .hero-grid { grid-template-columns: 1fr  .8fr; }
-      .floating-note { right: -10px; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--white);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.55}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    .container{width:min(1180px,calc(100% - 44px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(94,57,125,.08)}
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand img{width:205px;height:72px;object-fit:contain;object-position:left center}
+    .nav-links{display:flex;align-items:center;gap:25px;font-size:.94rem;font-weight:600;color:var(--navy)}
+    .nav-links a:hover{color:var(--purple)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:12px 20px;border:1px solid transparent;font-weight:700;transition:.2s;cursor:pointer}
+    .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+    .btn-primary{background:linear-gradient(110deg,var(--purple2),#6412a4);color:#fff}
+    .btn-outline{border-color:var(--navy);color:var(--navy);background:rgba(255,255,255,.8)}
+    .menu-toggle{display:none;border:0;background:none;color:var(--navy);font-size:1.8rem}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(110deg,#fbf9fd 0%,#f2eaf9 53%,#f8f5fb 100%)}
+    .hero:after{content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(214,166,59,.65);border-radius:50%;right:7%;top:-265px;pointer-events:none}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;gap:34px;min-height:490px;padding:45px 0}
+    .eyebrow{font-size:.76rem;text-transform:uppercase;letter-spacing:.23em;font-weight:700;color:var(--purple)}
+    h1,h2,h3{color:var(--navy);margin-top:0}
+    h1,h2,.serif{font-family:"Playfair Display",Georgia,serif}
+    h1{font-size:clamp(2.7rem,5vw,4.5rem);line-height:1.05;letter-spacing:-.035em;margin:16px 0}
+    h1 span{color:var(--purple)}
+    .hero-copy{font-size:1.06rem;max-width:490px;color:#3e4969;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+    .hero-photo{height:390px;border-radius:34px 34px 110px 34px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+    .hero-photo img{width:100%;height:100%;object-fit:cover}
+    .hero-photo:after{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.7);border-radius:25px 25px 95px 25px;pointer-events:none}
+    .value-strip{padding:18px 0;background:#fff}
+    .value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .value-item{display:flex;align-items:center;justify-content:center;gap:11px;padding:10px;color:var(--navy);font-size:.9rem}
+    .value-icon,.service-icon,.mini-icon{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;background:var(--lilac);color:var(--purple);font-size:1.35rem}
+    section{padding:74px 0}
+    .section-heading{text-align:center;margin:0 auto 34px;max-width:680px}
+    .section-heading h2{font-size:clamp(2rem,3.5vw,3rem);margin:8px 0}
+    .section-heading p{color:var(--muted);margin:0}
+    .services{background:linear-gradient(180deg,#fff 0%,#fbf8fd 100%)}
+    .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+    .service-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 26px rgba(54,34,80,.05);transition:transform .22s,box-shadow .22s}
+    .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .service-photo{height:285px;position:relative;overflow:hidden}
+    .service-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .service-card:hover .service-photo img{transform:scale(1.035)}
+    .service-icon{position:absolute;left:24px;bottom:-22px;border:5px solid #fff;width:62px;height:62px;font-size:1.55rem}
+    .service-content{padding:34px 27px 27px}
+    .service-content h3{font-family:"Playfair Display",Georgia,serif;font-size:1.65rem;margin:0 0 8px}
+    .service-content p{color:var(--muted);margin:0 0 17px;max-width:520px}
+    .service-link{color:var(--purple);font-weight:700}
+    .service-link span{font-size:1.2rem;margin-left:5px}
+    .about{background:linear-gradient(110deg,#f7f1fb,#fff 58%,#f4eff9)}
+    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:center}
+    .about-placeholder{min-height:360px;border-radius:30px;background:linear-gradient(145deg,#e8d9f3,#faf6fc);display:grid;place-items:center;text-align:center;padding:35px;position:relative;overflow:hidden}
+    .about-placeholder:before,.about-placeholder:after{content:"";position:absolute;border:1px solid rgba(214,166,59,.65);border-radius:50%;width:260px;height:260px}
+    .about-placeholder:after{width:340px;height:340px}
+    .about-placeholder img{width:135px;height:135px;object-fit:contain;position:relative;z-index:1}
+    .about-placeholder p{position:relative;z-index:1;max-width:260px;color:var(--navy);font-weight:600;margin:14px 0 0}
+    .about-copy h2{font-size:2.8rem;margin:8px 0}
+    .credential{font-weight:700;color:var(--purple);margin-bottom:14px}
+    .about-copy p{color:#56617d}
+    .pills{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+    .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:.84rem;font-weight:600;color:var(--navy)}
+    .blog{background:#fff}
+    .blog-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:32px;align-items:center}
+    .blog-intro h2{font-size:2.5rem;margin:8px 0}
+    .blog-intro p{color:var(--muted)}
+    .article-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .article-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+    .article-card img{width:100%;height:150px;object-fit:cover}
+    .article-card div{padding:14px}
+    .article-card small{color:var(--purple);font-weight:700}
+    .article-card h3{font-family:"Playfair Display",Georgia,serif;font-size:1.12rem;margin:5px 0 0}
+    .coming{display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:var(--lilac);color:var(--purple);padding:7px 11px;font-size:.8rem;font-weight:700;margin-top:13px}
+    .corporate{background:linear-gradient(110deg,#1a2b67,#55308b);color:#fff;position:relative;overflow:hidden}
+    .corporate-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .corporate-photo{height:320px;border-radius:26px;overflow:hidden;border:1px solid rgba(255,255,255,.3)}
+    .corporate-photo img{width:100%;height:100%;object-fit:cover}
+    .corporate h2{font-size:2.65rem;color:#fff;margin:8px 0}
+    .corporate p{color:#f0eafa}
+    .corporate .eyebrow{color:#f0cf7a}
+    .corporate-points{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 25px}
+    .corporate-points span{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 12px;font-size:.86rem}
+    .contact{background:#faf7fc}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:start}
+    .contact h2{font-size:2.5rem;margin:8px 0}
+    .muted{color:var(--muted)}
+    .contact-form{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:var(--shadow)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{display:block;color:var(--navy);font-size:.86rem;font-weight:700;margin:0 0 6px}
+    input,select,textarea{width:100%;border:1px solid #ded6e8;border-radius:12px;padding:12px 13px;margin-bottom:14px;color:var(--ink);background:#fff}
+    textarea{min-height:100px;resize:vertical}
+    footer{background:#111d4b;color:#fff;padding:28px 0}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:18px}
+    .footer-brand{font-family:"Playfair Display",serif;font-size:1.4rem;letter-spacing:.12em}
+    footer small{color:#d8d5e8}
+    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:40;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#20b86a;color:#fff;font-size:1.5rem;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+    @media(max-width:900px){
+      .nav-links{gap:13px;font-size:.86rem}.nav>.btn{display:none}
+      .hero-grid{grid-template-columns:1fr 1fr}.service-photo{height:230px}
+      .about-grid{gap:30px}.corporate-grid{gap:25px}
     }
-    @media (max-width: 760px) {
-      .container { width: min(100% - 32px, 600px); }
-      .nav { min-height: 72px; }
-      .brand img { width: 170px; height: 65px; }
-      .menu-toggle { display: block; }
-      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 20px 25px 25px; background: #fff; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 16px; }
-      .nav-links.open { display: flex; }
-      .nav > .btn { display: none; }
-      .hero-grid { grid-template-columns: 1fr; padding-top: 52px; gap: 10px; }
-      .hero-art { min-height: 260px; }
-      .hero-art .logo-large { width: 245px; }
-      .flower-orbit { width: 290px; height: 290px; }
-      .floating-note { right: 0; top: 5%; font-size: .78rem; }
-      .trust-grid { grid-template-columns: repeat(2,1fr); }
-      .trust-item { justify-content: flex-start; font-size: .82rem; }
-      section { padding: 62px 0; }
-      .service-grid { grid-template-columns: 1fr; }
-      .about-grid, .corporate-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-      .about-visual { min-height: 280px; }
-      .about-visual img { max-height: 250px; }
-      .corporate-panel { padding: 24px; }
-      .form-row { grid-template-columns: 1fr; gap: 0; }
-      .footer-row { flex-direction: column; text-align: center; }
+    @media(max-width:700px){
+      .container{width:min(100% - 32px,600px)}.nav{min-height:70px}
+      .brand img{width:170px;height:62px}.menu-toggle{display:block}
+      .nav-links{display:none;position:absolute;top:70px;left:0;right:0;padding:18px 25px 22px;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:15px}
+      .nav-links.open{display:flex}.hero-grid{grid-template-columns:1fr;padding:42px 0 30px;gap:25px}
+      .hero-photo{height:260px;border-radius:25px 25px 70px 25px}.value-grid{grid-template-columns:repeat(2,1fr)}
+      .value-item{justify-content:flex-start;font-size:.82rem;padding:7px 0}
+      section{padding:55px 0}.service-grid,.about-grid,.blog-grid,.corporate-grid,.contact-grid{grid-template-columns:1fr;gap:25px}
+      .service-photo{height:230px}.about-placeholder{min-height:270px}.about-copy h2{font-size:2.3rem}
+      .article-grid{grid-template-columns:1fr 1fr}.article-card img{height:120px}
+      .corporate-photo{height:230px}.corporate h2{font-size:2.2rem}.form-row{grid-template-columns:1fr;gap:0}
+      .footer-row{flex-direction:column;text-align:center}
     }
   </style>
 </head>
 <body>
-  <!-- IMPORTANTE: reemplaza el número de WhatsApp en el objeto CONFIG al final del archivo. -->
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="#inicio" aria-label="CENTAURIA, inicio">
-        <img src="assets/logo-centauria.png" alt="CENTAURIA Nutrición Clínica">
-      </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="#inicio">Inicio</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#empresas">Empresas</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-      <a class="btn btn-primary" href="#contacto">▦ &nbsp; Agenda tu consulta</a>
-    </div>
-  </header>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#inicio" aria-label="CENTAURIA, inicio"><img src="assets/logo-centauria.png" alt="CENTAURIA Nutrición Clínica"></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio">Inicio</a><a href="#sobre-mi">Sobre mí</a><a href="#servicios">Servicios</a>
+      <a href="#empresas">Empresas</a><a href="#blog">Blog</a><a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-primary" href="#contacto">▦ Agenda tu consulta</a>
+  </div>
+</header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Nutrición basada en ciencia</div>
-          <h1>El puente entre<br>la <span>clínica y el plato.</span></h1>
-          <p class="hero-copy">Acompañamiento nutricional personalizado, con una mirada clínica, integral y basada en la evidencia, para cuidar tu salud y construir cambios sostenibles.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contacto">▦ &nbsp; Reserva tu consulta 1 a 1</a>
-            <a class="btn btn-outline" href="#sobre-mi">Conoce CENTAURIA &nbsp; →</a>
-          </div>
-        </div>
-        <div class="hero-art" aria-label="Identidad visual de CENTAURIA">
-          <div class="flower-orbit"></div>
-          <img class="logo-large" src="assets/logo-centauria.png" alt="Símbolo floral de CENTAURIA">
-          <div class="floating-note">✧ Enfoque clínico y seguro<small>Atención individual y corporativa</small></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="trust-strip">
-      <div class="container trust-grid">
-        <div class="trust-item"><b>✧</b> Nutrición clínica y preventiva</div>
-        <div class="trust-item"><b>♡</b> Atención personalizada</div>
-        <div class="trust-item"><b>⌁</b> Rigor y evidencia científica</div>
-        <div class="trust-item"><b>∞</b> Bienestar sostenible</div>
-      </div>
-    </div>
-
-    <section class="services" id="servicios">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Cómo podemos trabajar</div>
-          <h2>Servicios CENTAURIA</h2>
-          <p>Un acompañamiento profesional que considera tu historia, tus necesidades y tus objetivos de salud.</p>
-        </div>
-        <div class="service-grid">
-          <article class="service-card">
-            <div class="service-icon">♡</div>
-            <h3>Consulta nutricional 1 a 1</h3>
-            <p>Evaluación nutricional individual y plan de alimentación adaptado a tus objetivos, contexto y estilo de vida.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">✚</div>
-            <h3>Nutrición clínica</h3>
-            <p>Orientación nutricional en condiciones metabólicas, digestivas y otras necesidades de salud, según evaluación.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">❋</div>
-            <h3>Prevención y bienestar</h3>
-            <p>Educación alimentaria y herramientas prácticas para desarrollar hábitos saludables y sostenibles.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">♧</div>
-            <h3>Programas para empresas</h3>
-            <p>Charlas, talleres y experiencias de bienestar nutricional para equipos y organizaciones.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="sobre-mi">
-      <div class="container about-grid">
-        <div class="about-visual">
-          <img src="assets/pin-centauria.png" alt="Pin floral CENTAURIA sobre una bata blanca">
-        </div>
-        <div class="about-copy">
-          <div class="eyebrow">Conoce a tu nutricionista</div>
-          <h2>Una mirada clínica, humana e integral.</h2>
-          <div class="credential">Nutricionista · Estudiante de Medicina (5.º año)</div>
-          <p>Soy nutricionista y estudiante de Medicina. Desde CENTAURIA integro la formación en nutrición con una mirada clínica amplia, para acompañar a cada persona con criterio profesional, escucha y decisiones fundamentadas en evidencia científica.</p>
-          <p>Creo en una nutrición que va más allá de una pauta: que comprende a la persona, considera su contexto y busca cambios realistas que puedan sostenerse en el tiempo.</p>
-          <div class="pill-list">
-            <span class="pill">Formación académica</span>
-            <span class="pill">Enfoque basado en evidencia</span>
-            <span class="pill">Visión integral de salud</span>
-          </div>
-          <a class="btn btn-outline" href="#contacto">Conversemos sobre tus objetivos →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="corporate" id="empresas">
-      <div class="container corporate-grid">
-        <div>
-          <div class="eyebrow">CENTAURIA Empresas</div>
-          <h2>Bienestar que también se construye en el trabajo.</h2>
-          <p>Programas de nutrición y bienestar diseñados para organizaciones que quieren promover hábitos saludables y cuidar a sus equipos.</p>
-          <ul class="corporate-list">
-            <li>Charlas educativas y preventivas.</li>
-            <li>Talleres de alimentación saludable.</li>
-            <li>Jornadas de evaluación y orientación nutricional.</li>
-            <li>Planes de acompañamiento para colaboradores.</li>
-          </ul>
-          <a class="btn" style="background:#fff;color:#32105e" href="#contacto">Solicita una propuesta →</a>
-        </div>
-        <div class="corporate-panel">
-          <div class="big-icon">✧</div>
-          <h3>Salud, conocimiento y comunidad.</h3>
-          <p>Experiencias educativas adaptables a las necesidades, tiempos y objetivos de cada organización.</p>
-          <p><strong>Modalidad:</strong> presencial u online, según coordinación.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contacto">
-      <div class="container contact-grid">
-        <div>
-          <div class="eyebrow">Demos el primer paso</div>
-          <h2>Hablemos de tu salud.</h2>
-          <p class="contact-info">Cuéntame qué necesitas y te contactaré para orientarte sobre el servicio más adecuado.</p>
-          <p><strong>Consultas individuales</strong><br>Solicita información sobre disponibilidad y modalidad.</p>
-          <p><strong>Empresas y organizaciones</strong><br>Conversemos sobre charlas, talleres y programas corporativos.</p>
-        </div>
-        <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <div><label for="name">Nombre</label><input id="name" name="name" required placeholder="Tu nombre"></div>
-            <div><label for="email">Correo electrónico</label><input id="email" name="email" type="email" required placeholder="tu@email.com"></div>
-          </div>
-          <label for="service">¿Qué servicio te interesa?</label>
-          <select id="service" name="service" required>
-            <option value="">Selecciona una opción</option>
-            <option>Consulta nutricional individual</option>
-            <option>Nutrición clínica</option>
-            <option>Charlas o talleres para empresas</option>
-            <option>Programa de bienestar corporativo</option>
-            <option>Otra consulta</option>
-          </select>
-          <label for="message">Mensaje</label>
-          <textarea id="message" name="message" placeholder="Cuéntame brevemente qué estás buscando..."></textarea>
-          <button class="btn btn-primary" type="submit">Enviar consulta por WhatsApp →</button>
-          <p class="form-hint">Este formulario abrirá WhatsApp con tu mensaje preparado. No almacena datos en esta página.</p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-row">
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
       <div>
-        <div class="footer-brand">CENTAURIA</div>
-        <small>Nutrición Clínica · Ciencia, conocimiento y bienestar.</small>
+        <div class="eyebrow">Nutrición clínica · Ciencia · Bienestar</div>
+        <h1>El puente entre<br>la <span>clínica y el plato.</span></h1>
+        <p class="hero-copy">Nutrición basada en evidencia, con una mirada clínica y humana para cuidar tu salud y construir cambios posibles.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacto">▦ Reserva tu consulta</a>
+          <a class="btn btn-outline" href="#sobre-mi">Conoce CENTAURIA →</a>
+        </div>
       </div>
-      <small>© <span id="year"></span> CENTAURIA. Todos los derechos reservados.</small>
+      <div class="hero-photo"><img src="assets/hero-nutricion.jpg" alt="Alimentos frescos, centaurea y elementos de evaluación clínica"></div>
     </div>
-  </footer>
+  </section>
 
-  <a class="whatsapp" id="whatsappFloat" href="#" aria-label="Contactar por WhatsApp" title="Contactar por WhatsApp">◔</a>
+  <div class="value-strip">
+    <div class="container value-grid">
+      <div class="value-item"><span class="value-icon">✚</span><span>Enfoque clínico<br>y seguro</span></div>
+      <div class="value-item"><span class="value-icon">⚗</span><span>Evidencia<br>científica</span></div>
+      <div class="value-item"><span class="value-icon">♡</span><span>Atención<br>personalizada</span></div>
+      <div class="value-item"><span class="value-icon">❋</span><span>Bienestar<br>sostenible</span></div>
+    </div>
+  </div>
 
-  <script>
-    // CONFIGURACIÓN: cambia este número por tu WhatsApp con código de país,
-    // solo números, sin +, espacios ni guiones. Ejemplo Chile: 56912345678.
-    const CONFIG = {
-      whatsappNumber: "56900000000"
-    };
+  <section class="services" id="servicios">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Dos formas de trabajar juntos</div>
+        <h2>Nuestros servicios</h2>
+        <p>Atención individual y bienestar para organizaciones.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-photo">
+            <img src="assets/consulta-1a1.jpg" alt="Profesional de nutrición conversando con una paciente durante una consulta">
+            <span class="service-icon">♡</span>
+          </div>
+          <div class="service-content">
+            <h3>Consulta nutricional 1 a 1</h3>
+            <p>Evaluación y acompañamiento nutricional adaptado a tu salud, tus objetivos y tu vida cotidiana.</p>
+            <a class="service-link" href="#contacto">Conocer la consulta <span>→</span></a>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-photo">
+            <img src="assets/empresas-taller.jpg" alt="Taller de educación nutricional para un equipo de trabajo">
+            <span class="service-icon">♧</span>
+          </div>
+          <div class="service-content">
+            <h3>CENTAURIA Empresas</h3>
+            <p>Charlas, talleres y programas de nutrición y bienestar para equipos y organizaciones.</p>
+            <a class="service-link" href="#empresas">Conocer los programas <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.textContent = isOpen ? "×" : "☰";
-    });
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.textContent = "☰";
-      });
-    });
+  <section class="about" id="sobre-mi">
+    <div class="container about-grid">
+      <div class="about-placeholder">
+        <img src="assets/logo-centauria.png" alt="Símbolo floral de CENTAURIA">
+        <p>Tu fotografía profesional irá aquí</p>
+      </div>
+      <div class="about-copy">
+        <div class="eyebrow">Conoce a tu nutricionista</div>
+        <h2>Una mirada clínica y humana.</h2>
+        <div class="credential">Nutricionista · Estudiante de Medicina (5.º año)</div>
+        <p>Soy nutricionista y estudiante de Medicina. Desde CENTAURIA busco integrar la nutrición con una mirada clínica amplia, decisiones basadas en evidencia y acompañamiento cercano.</p>
+        <div class="pills"><span class="pill">Formación en nutrición</span><span class="pill">Criterio científico</span><span class="pill">Atención personalizada</span></div>
+        <a class="btn btn-outline" href="#contacto">Conversemos →</a>
+      </div>
+    </div>
+  </section>
 
-    function whatsappUrl(message) {
-      return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
-    }
-    document.getElementById("whatsappFloat").href = whatsappUrl("Hola, quisiera recibir información sobre CENTAURIA Nutrición Clínica.");
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const service = document.getElementById("service").value;
-      const message = document.getElementById("message").value.trim();
-      const text = `Hola, soy ${name}. Mi correo es ${email}.\nMe interesa: ${service}.\nMensaje: ${message}`;
-      window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
-    });
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <section class="blog" id="blog">
+    <div class="container blog-grid">
+      <div class="blog-intro">
+        <div class="eyebrow">Ciencia para la vida cotidiana</div>
+        <h2>Blog CENTAURIA</h2>
+        <p>Información clara y divulgación científica para comprender mejor la relación entre alimentación y salud.</p>
+        <span class="coming">✧ Sección en preparación</span>
+      </div>
+      <div class="article-grid">
+        <article class="article-card"><img src="assets/alimentacion-saludable.jpg" alt="Plato equilibrado con vegetales y proteínas"><div><small>Nutrición clínica</small><h3>Alimentación y salud: empezar por lo esencial</h3></div></article>
+        <article class="article-card"><img src="assets/hero-nutricion.jpg" alt="Alimentos frescos y elementos clínicos"><div><small>Divulgación científica</small><h3>La evidencia detrás de las decisiones nutricionales</h3></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="corporate" id="empresas">
+    <div class="container corporate-grid">
+      <div class="corporate-photo"><img src="assets/empresas-taller.jpg" alt="Profesional realizando una charla de nutrición a colaboradores"></div>
+      <div>
+        <div class="eyebrow">CENTAURIA Empresas</div>
+        <h2>El bienestar también se construye en el trabajo.</h2>
+        <p>Experiencias de educación nutricional diseñadas según las necesidades de cada organización.</p>
+        <div class="corporate-points"><span>Charlas</span><span>Talleres</span><span>Jornadas de orientación</span><span>Programas de bienestar</span></div>
+        <a class="btn" style="background:#fff;color:#4b2179" href="#contacto">Solicita una propuesta →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="container contact-grid">
+      <div>
+        <div class="eyebrow">Demos el primer paso</div>
+        <h2>Hablemos.</h2>
+        <p class="muted">Cuéntame qué necesitas y conversemos sobre la modalidad de atención o el programa para tu organización.</p>
+        <p>♡ <strong>Consultas individuales</strong></p>
+        <p>✧ <strong>Empresas y organizaciones</strong></p>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div><label for="name">Nombre</label><input id="name" required placeholder="Tu nombre"></div>
+          <div><label for="email">Correo electrónico</label><input id="email" type="email" required placeholder="tu@email.com"></div>
+        </div>
+        <label for="service">¿Qué te interesa?</label>
+        <select id="service" required><option value="">Selecciona una opción</option><option>Consulta nutricional 1 a 1</option><option>CENTAURIA Empresas</option><option>Otra consulta</option></select>
+        <label for="message">Mensaje</label><textarea id="message" placeholder="Cuéntame brevemente..."></textarea>
+        <button class="btn btn-primary" type="submit">Preparar mensaje →</button>
+        <p class="muted" style="font-size:.78rem;margin-bottom:0">El contacto por WhatsApp se activará cuando configuremos tu número profesional.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div><div class="footer-brand">CENTAURIA</div><small>Nutrición Clínica · Ciencia, conocimiento y bienestar.</small></div>
+    <small>© <span id="year"></span> CENTAURIA. Todos los derechos reservados.</small>
+  </div>
+</footer>
+<a class="whatsapp" href="#contacto" aria-label="Ir a contacto" title="Contacto">✉</a>
+
+<script>
+  const menuToggle=document.getElementById("menuToggle");
+  const navLinks=document.getElementById("navLinks");
+  menuToggle.addEventListener("click",()=>{
+    const open=navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded",String(open));
+    menuToggle.textContent=open?"×":"☰";
+  });
+  navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+    navLinks.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");menuToggle.textContent="☰";
+  }));
+  document.getElementById("contactForm").addEventListener("submit",e=>{
+    e.preventDefault();
+    alert("El formulario está preparado. Para recibir mensajes, primero configuraremos tu número de WhatsApp profesional.");
+  });
+  document.getElementById("year").textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
