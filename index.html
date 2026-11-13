@@ -131,6 +131,20 @@
       .corporate-photo{height:230px}.corporate h2{font-size:2.2rem}.form-row{grid-template-columns:1fr;gap:0}
       .footer-row{flex-direction:column;text-align:center}
     }
+
+    /* Perfil profesional CENTAURIA */
+    .profile-section{background:linear-gradient(110deg,#f7f1fb,#fff 58%,#f4eff9)}
+    .profile-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start}
+    .profile-photo{height:490px;overflow:hidden;border-radius:30px 30px 100px 30px;box-shadow:var(--shadow)}
+    .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+    .profile-copy h2{font-size:clamp(2.1rem,3.5vw,2.8rem);margin:8px 0}
+    .profile-role{color:var(--purple);font-weight:700}
+    .profile-copy p{color:#56617d}
+    .profile-copy h3{font-family:"Playfair Display",Georgia,serif;font-size:1.4rem;margin:25px 0 8px}
+    .profile-specialties{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+    .profile-specialties span{background:#fff;border:1px solid var(--line);border-radius:30px;padding:7px 12px;font-size:.83rem;color:var(--navy)}
+    .profile-quote{border-left:3px solid var(--gold);padding:16px 20px;background:#fff;color:var(--navy);font-family:"Playfair Display",Georgia,serif;font-size:1.2rem;margin-top:25px}
+    @media(max-width:700px){.profile-grid{grid-template-columns:1fr;gap:28px}.profile-photo{height:400px}.profile-copy h2{font-size:2.2rem}}
   </style>
 </head>
 <body>
@@ -140,7 +154,7 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
     <nav class="nav-links" id="navLinks">
       <a href="#inicio">Inicio</a><a href="#centro">Nuestro centro</a><a href="#servicios">Especialidades</a>
-      <a href="#profesionales">Profesionales</a><a href="#empresas">Empresas</a><a href="#blog">Blog</a><a href="#contacto">Contacto</a>
+      <a href="#sobre-mi">Sobre mí</a><a href="#empresas">Empresas</a><a href="#blog">Blog</a><a href="#contacto">Contacto</a>
     </nav>
     <a class="btn btn-primary" href="#contacto">▦ Agenda tu consulta</a>
   </div>
@@ -178,7 +192,37 @@
 
 
   <section class="about" id="centro"><div class="container about-grid"><div class="about-placeholder"><img src="assets/logo-centauria.png" alt="Emblema CENTAURIA"></div><div class="about-copy"><div class="eyebrow">Quiénes somos</div><h2>Una visión integral de la salud.</h2><p>CENTAURIA nace con la idea de acercar distintas áreas del conocimiento y la atención profesional en un mismo espacio digital.</p><p>Creemos en una atención que considera a la persona en sus distintas dimensiones y facilita el acceso a profesionales de diversas disciplinas.</p><div class="pills"><span class="pill">Ciencia</span><span class="pill">Salud</span><span class="pill">Colaboración profesional</span><span class="pill">Bienestar</span></div></div></div></section>
-  <section class="services" id="profesionales"><div class="container"><div class="section-heading"><div class="eyebrow">Personas detrás de la atención</div><h2>Nuestros profesionales</h2><p>Perfiles profesionales y modalidades de atención.</p></div><div class="service-grid"><article class="service-card"><div class="service-content"><h3>Nutricionista</h3><p>Fundador de CENTAURIA. Aquí incorporaremos tu fotografía, formación, experiencia y enfoque de atención.</p><span class="pill">Perfil en preparación</span></div></article><article class="service-card"><div class="service-content"><h3>Psicólogo clínico</h3><p>Profesional colaborador. Incorporaremos su fotografía, credenciales, experiencia y modalidad de atención.</p><span class="pill">Perfil en preparación</span></div></article></div></div></section>
+  <section class="profile-section" id="sobre-mi">
+  <div class="container">
+    <div class="profile-grid">
+      <div>
+        <div class="profile-photo">
+          <img src="assets/perfil-profesional.jpg" alt="Fotografía profesional de la nutricionista de CENTAURIA">
+        </div>
+      </div>
+      <div class="profile-copy">
+        <div class="eyebrow">Sobre mí</div>
+        <h2>Nutricionista con formación y enfoque en salud clínica.</h2>
+        <p class="profile-role">Nutricionista · Instructora de Yoga Integral · Estudiante de Medicina</p>
+        <p>Soy nutricionista, instructora de Yoga Integral y actualmente estudiante de Medicina. Desde hace más de 10 años he dedicado mi formación al área de la salud, complementando mis estudios con cursos y capacitaciones en nutrición, bienestar y salud integral.</p>
+        <p>Mi interés profesional está centrado en comprender la salud desde una perspectiva clínica, científica e integral, considerando que cada persona tiene una historia, necesidades y circunstancias particulares.</p>
+        <h3>Mi enfoque clínico</h3>
+        <p>Mi práctica se orienta al cambio de hábitos y al acompañamiento nutricional de personas con enfermedades crónicas y metabólicas.</p>
+        <div class="profile-specialties">
+          <span>Diabetes</span><span>Resistencia a la insulina</span><span>Hipertensión arterial</span><span>Hígado graso</span><span>Dislipidemias</span><span>Gota</span><span>Reflujo gastroesofágico</span><span>Obesidad</span><span>Síndrome de intestino irritable</span><span>Hipotiroidismo</span>
+        </div>
+        <p>Busco integrar la evidencia científica con una mirada individualizada, para que las recomendaciones nutricionales sean pertinentes, realistas y sostenibles en el tiempo.</p>
+        <h3>¿Cómo trabajo?</h3>
+        <p>Cada proceso comienza por conocer a la persona, comprender sus necesidades e identificar las principales dificultades que pueden estar interfiriendo en su salud.</p>
+        <p>A partir de esa evaluación, establecemos objetivos progresivos y personalizados, considerando su condición clínica, estilo de vida y etapa del proceso. Mi propósito es que cada paciente cuente con orientación profesional, herramientas prácticas y un acompañamiento que le permita avanzar de manera consciente y sostenible.</p>
+        <h3>¿Por qué nace CENTAURIA?</h3>
+        <p>CENTAURIA nace de la idea de crear un espacio propio, seguro y basado en la confianza, donde las personas puedan encontrar profesionales comprometidos con el conocimiento, la ciencia y, sobre todo, con la dimensión humana de la salud.</p>
+        <p>Creo que la atención en salud no debe limitarse a aplicar conocimientos o entregar indicaciones. Detrás de cada diagnóstico y de cada historia clínica hay una persona que merece ser escuchada, comprendida y tratada con respeto.</p>
+        <blockquote class="profile-quote">No se trata solamente de ser empático. Se trata de ser humano.</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
   <section class="blog" id="blog">
     <div class="container blog-grid">
       <div class="blog-intro">
