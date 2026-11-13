@@ -1,225 +1,235 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CENTAURIA Centro de Salud Integral. Consultas nutricionales individuales y programas de nutrición y bienestar para empresas, con enfoque clínico y basado en evidencia.">
-  <meta name="theme-color" content="#f7f2fb">
-  <title>Sobre mí | CENTAURIA – Centro de Salud Integral</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --navy:#17234f;--purple:#761bb6;--purple2:#963bd0;--lilac:#eee3f7;
-      --lavender:#f7f2fb;--pale:#fcfaff;--gold:#d6a63b;--ink:#20294c;
-      --muted:#65708d;--line:#e8def0;--white:#fff;--shadow:0 16px 42px rgba(55,31,91,.10);
-      --radius:24px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--white);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.55}
-    img{display:block;max-width:100%}
-    a{color:inherit;text-decoration:none}
-    button,input,select,textarea{font:inherit}
-    .container{width:min(1180px,calc(100% - 44px));margin:auto}
-    .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(94,57,125,.08)}
-    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-    .brand img{width:205px;height:72px;object-fit:contain;object-position:left center}
-    .nav-links{display:flex;align-items:center;gap:25px;font-size:.94rem;font-weight:600;color:var(--navy)}
-    .nav-links a:hover{color:var(--purple)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:12px 20px;border:1px solid transparent;font-weight:700;transition:.2s;cursor:pointer}
-    .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-    .btn-primary{background:linear-gradient(110deg,var(--purple2),#6412a4);color:#fff}
-    .btn-outline{border-color:var(--navy);color:var(--navy);background:rgba(255,255,255,.8)}
-    .menu-toggle{display:none;border:0;background:none;color:var(--navy);font-size:1.8rem}
-    .hero{position:relative;overflow:hidden;background:linear-gradient(110deg,#fbf9fd 0%,#f2eaf9 53%,#f8f5fb 100%)}
-    .hero:after{content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(214,166,59,.65);border-radius:50%;right:7%;top:-265px;pointer-events:none}
-    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;gap:34px;min-height:490px;padding:45px 0}
-    .eyebrow{font-size:.76rem;text-transform:uppercase;letter-spacing:.23em;font-weight:700;color:var(--purple)}
-    h1,h2,h3{color:var(--navy);margin-top:0}
-    h1,h2,.serif{font-family:"Playfair Display",Georgia,serif}
-    h1{font-size:clamp(2.7rem,5vw,4.5rem);line-height:1.05;letter-spacing:-.035em;margin:16px 0}
-    h1 span{color:var(--purple)}
-    .hero-copy{font-size:1.06rem;max-width:490px;color:#3e4969;margin:0}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
-    .hero-photo{height:390px;border-radius:34px 34px 110px 34px;overflow:hidden;box-shadow:var(--shadow);position:relative}
-    .hero-photo img{width:100%;height:100%;object-fit:cover}
-    .hero-photo:after{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.7);border-radius:25px 25px 95px 25px;pointer-events:none}
-    .value-strip{padding:18px 0;background:#fff}
-    .value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .value-item{display:flex;align-items:center;justify-content:center;gap:11px;padding:10px;color:var(--navy);font-size:.9rem}
-    .value-icon,.service-icon,.mini-icon{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;background:var(--lilac);color:var(--purple);font-size:1.35rem}
-    section{padding:74px 0}
-    .section-heading{text-align:center;margin:0 auto 34px;max-width:680px}
-    .section-heading h2{font-size:clamp(2rem,3.5vw,3rem);margin:8px 0}
-    .section-heading p{color:var(--muted);margin:0}
-    .services{background:linear-gradient(180deg,#fff 0%,#fbf8fd 100%)}
-    .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}.service-grid-three{grid-template-columns:repeat(3,1fr)}
-    .service-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 26px rgba(54,34,80,.05);transition:transform .22s,box-shadow .22s}
-    .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-    .service-photo{height:285px;position:relative;overflow:hidden}
-    .service-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-    .service-card:hover .service-photo img{transform:scale(1.035)}
-    .service-icon{position:absolute;left:24px;bottom:-22px;border:5px solid #fff;width:62px;height:62px;font-size:1.55rem}
-    .service-content{padding:34px 27px 27px}
-    .service-content h3{font-family:"Playfair Display",Georgia,serif;font-size:1.65rem;margin:0 0 8px}
-    .service-content p{color:var(--muted);margin:0 0 17px;max-width:520px}
-    .service-link{color:var(--purple);font-weight:700}
-    .service-link span{font-size:1.2rem;margin-left:5px}
-    .about{background:linear-gradient(110deg,#f7f1fb,#fff 58%,#f4eff9)}
-    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:center}
-    .about-placeholder{min-height:360px;border-radius:30px;background:linear-gradient(145deg,#e8d9f3,#faf6fc);display:grid;place-items:center;text-align:center;padding:35px;position:relative;overflow:hidden}
-    .about-placeholder:before,.about-placeholder:after{content:"";position:absolute;border:1px solid rgba(214,166,59,.65);border-radius:50%;width:260px;height:260px}
-    .about-placeholder:after{width:340px;height:340px}
-    .about-placeholder img{width:135px;height:135px;object-fit:contain;position:relative;z-index:1}
-    .about-placeholder p{position:relative;z-index:1;max-width:260px;color:var(--navy);font-weight:600;margin:14px 0 0}
-    .about-copy h2{font-size:2.8rem;margin:8px 0}
-    .credential{font-weight:700;color:var(--purple);margin-bottom:14px}
-    .about-copy p{color:#56617d}
-    .pills{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
-    .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:.84rem;font-weight:600;color:var(--navy)}
-    .blog{background:#fff}
-    .blog-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:32px;align-items:center}
-    .blog-intro h2{font-size:2.5rem;margin:8px 0}
-    .blog-intro p{color:var(--muted)}
-    .article-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .article-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
-    .article-card img{width:100%;height:150px;object-fit:cover}
-    .article-card div{padding:14px}
-    .article-card small{color:var(--purple);font-weight:700}
-    .article-card h3{font-family:"Playfair Display",Georgia,serif;font-size:1.12rem;margin:5px 0 0}
-    .coming{display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:var(--lilac);color:var(--purple);padding:7px 11px;font-size:.8rem;font-weight:700;margin-top:13px}
-    .corporate{background:linear-gradient(110deg,#1a2b67,#55308b);color:#fff;position:relative;overflow:hidden}
-    .corporate-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
-    .corporate-photo{height:320px;border-radius:26px;overflow:hidden;border:1px solid rgba(255,255,255,.3)}
-    .corporate-photo img{width:100%;height:100%;object-fit:cover}
-    .corporate h2{font-size:2.65rem;color:#fff;margin:8px 0}
-    .corporate p{color:#f0eafa}
-    .corporate .eyebrow{color:#f0cf7a}
-    .corporate-points{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 25px}
-    .corporate-points span{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 12px;font-size:.86rem}
-    .contact{background:#faf7fc}
-    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:start}
-    .contact h2{font-size:2.5rem;margin:8px 0}
-    .muted{color:var(--muted)}
-    .contact-form{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:var(--shadow)}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    label{display:block;color:var(--navy);font-size:.86rem;font-weight:700;margin:0 0 6px}
-    input,select,textarea{width:100%;border:1px solid #ded6e8;border-radius:12px;padding:12px 13px;margin-bottom:14px;color:var(--ink);background:#fff}
-    textarea{min-height:100px;resize:vertical}
-    footer{background:#111d4b;color:#fff;padding:28px 0}
-    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:18px}
-    .footer-brand{font-family:"Playfair Display",serif;font-size:1.4rem;letter-spacing:.12em}
-    footer small{color:#d8d5e8}
-    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:40;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#20b86a;color:#fff;font-size:1.5rem;box-shadow:0 10px 24px rgba(0,0,0,.18)}
-    @media(max-width:900px){
-      .nav-links{gap:13px;font-size:.86rem}.nav>.btn{display:none}
-      .hero-grid{grid-template-columns:1fr 1fr}.service-photo{height:230px}.service-grid-three .service-photo{height:190px}
-      .about-grid{gap:30px}.corporate-grid{gap:25px}
-    }
-    @media(max-width:700px){
-      .container{width:min(100% - 32px,600px)}.nav{min-height:70px}
-      .brand img{width:170px;height:62px}.menu-toggle{display:block}
-      .nav-links{display:none;position:absolute;top:70px;left:0;right:0;padding:18px 25px 22px;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:15px}
-      .nav-links.open{display:flex}.hero-grid{grid-template-columns:1fr;padding:42px 0 30px;gap:25px}
-      .hero-photo{height:260px;border-radius:25px 25px 70px 25px}.value-grid{grid-template-columns:repeat(2,1fr)}
-      .value-item{justify-content:flex-start;font-size:.82rem;padding:7px 0}
-      section{padding:55px 0}.service-grid,.service-grid-three,.about-grid,.blog-grid,.corporate-grid,.contact-grid{grid-template-columns:1fr;gap:25px}
-      .service-photo{height:230px}.service-grid-three .service-photo{height:190px}.about-placeholder{min-height:270px}.about-copy h2{font-size:2.3rem}
-      .article-grid{grid-template-columns:1fr 1fr}.article-card img{height:120px}
-      .corporate-photo{height:230px}.corporate h2{font-size:2.2rem}.form-row{grid-template-columns:1fr;gap:0}
-      .footer-row{flex-direction:column;text-align:center}
-    }
-
-    /* Perfil profesional CENTAURIA */
-    .profile-section{background:linear-gradient(110deg,#f7f1fb,#fff 58%,#f4eff9)}
-    .profile-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start}
-    .profile-photo{height:490px;overflow:hidden;border-radius:30px 30px 100px 30px;box-shadow:var(--shadow)}
-    .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
-    .profile-copy h2{font-size:clamp(2.1rem,3.5vw,2.8rem);margin:8px 0}
-    .profile-role{color:var(--purple);font-weight:700}
-    .profile-copy p{color:#56617d}
-    .profile-copy h3{font-family:"Playfair Display",Georgia,serif;font-size:1.4rem;margin:25px 0 8px}
-    .profile-specialties{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
-    .profile-specialties span{background:#fff;border:1px solid var(--line);border-radius:30px;padding:7px 12px;font-size:.83rem;color:var(--navy)}
-    .profile-quote{border-left:3px solid var(--gold);padding:16px 20px;background:#fff;color:var(--navy);font-family:"Playfair Display",Georgia,serif;font-size:1.2rem;margin-top:25px}
-    @media(max-width:700px){.profile-grid{grid-template-columns:1fr;gap:28px}.profile-photo{height:400px}.profile-copy h2{font-size:2.2rem}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Conoce la trayectoria, el enfoque clínico y la filosofía de atención de la nutricionista de CENTAURIA.">
+<meta name="theme-color" content="#f7f2fb">
+<title>Sobre mí | CENTAURIA – Centro de Salud Integral</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --navy:#17234f;--purple:#761bb6;--purple2:#963bd0;--lilac:#eee3f7;
+ --lavender:#f7f2fb;--pale:#fcfaff;--gold:#d6a63b;--ink:#20294c;
+ --muted:#65708d;--line:#e8def0;--white:#fff;
+ --shadow:0 18px 48px rgba(55,31,91,.13);--radius:26px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.65}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.container{width:min(1160px,calc(100% - 44px));margin:auto}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(94,57,125,.09)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:"Playfair Display",serif;font-size:1.55rem;letter-spacing:.12em;color:var(--navy);font-weight:600}
+.brand span{display:block;font:600 .55rem "DM Sans",sans-serif;letter-spacing:.25em;color:var(--purple);text-align:center;margin-top:-4px}
+.navlinks{display:flex;align-items:center;gap:27px;font-size:.92rem;font-weight:600;color:var(--navy)}
+.navlinks a:hover,.navlinks .active{color:var(--purple)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:12px 21px;border:1px solid transparent;font-weight:700;transition:.2s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-primary{background:linear-gradient(110deg,var(--purple2),#6412a4);color:#fff}
+.btn-outline{border-color:var(--purple);color:var(--purple);background:#fff}
+.hero{position:relative;overflow:hidden;background:linear-gradient(115deg,#f8f3fb 0%,#fff 48%,#f2eafa 100%);padding:64px 0 72px}
+.hero:before{content:"";position:absolute;width:570px;height:570px;border:1px solid rgba(214,166,59,.42);border-radius:50%;right:-210px;top:-330px}
+.hero:after{content:"";position:absolute;width:340px;height:340px;border:1px solid rgba(118,27,182,.13);border-radius:50%;left:-220px;bottom:-230px}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:.9fr 1.1fr;gap:78px;align-items:center}
+.photo-stage{position:relative;max-width:420px;margin:0 auto;width:100%;padding:0 22px 25px 0}
+.photo-halo{position:absolute;inset:25px -2px 0 22px;border-radius:48% 48% 36% 36%;background:linear-gradient(145deg,#e9d8f4,#f9f4fc);transform:rotate(-5deg)}
+.photo-frame{height:455px;position:relative;overflow:hidden;border-radius:46% 46% 28px 28px;background:#eee5f5;box-shadow:var(--shadow);border:8px solid rgba(255,255,255,.88)}
+.photo-frame:after{content:"";position:absolute;inset:10px;border:1px solid rgba(255,255,255,.75);border-radius:44% 44% 20px 20px;pointer-events:none}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.photo-seal{position:absolute;right:-3px;bottom:3px;width:112px;height:112px;border-radius:50%;background:linear-gradient(145deg,#fff,#f4eafa);border:1px solid #e3d1ef;box-shadow:0 10px 28px rgba(55,31,91,.12);display:grid;place-items:center;text-align:center;color:var(--purple);font-size:.7rem;font-weight:700;line-height:1.35;padding:13px}
+.photo-seal strong{display:block;font-family:"Playfair Display",serif;font-size:1.45rem;color:var(--gold);font-weight:700}
+.hero-copy .eyebrow,.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.23em;font-weight:700;color:var(--purple)}
+h1,h2,h3{color:var(--navy);margin-top:0}
+h1,h2,.serif{font-family:"Playfair Display",Georgia,serif}
+h1{font-size:clamp(2.5rem,4.5vw,4.15rem);line-height:1.08;letter-spacing:-.035em;margin:13px 0 18px}
+h1 span{color:var(--purple)}
+.lead{font-size:1.08rem;color:#465273;max-width:610px;margin:0 0 20px}
+.credentials{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 27px}
+.credential{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:999px;padding:8px 13px;color:var(--navy);font-size:.84rem;font-weight:600}
+.credential i{font-style:normal;color:var(--purple);font-size:1rem}
+.hero-note{border-left:3px solid var(--gold);padding:10px 0 10px 16px;color:var(--muted);font-size:.92rem;max-width:560px}
+.section{padding:76px 0}
+.section-heading{text-align:center;max-width:700px;margin:0 auto 38px}
+.section-heading h2{font-size:clamp(2rem,3.4vw,2.9rem);margin:8px 0}
+.section-heading p{color:var(--muted);margin:0}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.info-card{padding:30px 30px 28px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:0 8px 26px rgba(54,34,80,.045);position:relative;overflow:hidden}
+.info-card:before{content:"";position:absolute;width:120px;height:120px;border:1px solid rgba(214,166,59,.34);border-radius:50%;right:-54px;top:-55px}
+.card-icon{width:48px;height:48px;border-radius:16px;background:var(--lilac);color:var(--purple);display:grid;place-items:center;font-size:1.35rem;margin-bottom:17px}
+.info-card h3{font:600 1.45rem "Playfair Display",serif;margin-bottom:10px}
+.info-card p{color:var(--muted);margin:0}
+.clinical{background:linear-gradient(110deg,#f8f4fb,#fff 55%,#f7f1fb)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:11px;max-width:900px;margin:30px auto 0}
+.chip{background:#fff;border:1px solid #e5d8ef;border-radius:999px;padding:10px 16px;color:var(--navy);font-size:.9rem;font-weight:600;box-shadow:0 4px 12px rgba(55,31,91,.035)}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.method{padding:28px 24px;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 25px rgba(54,34,80,.045)}
+.method-number{font:700 2rem "Playfair Display",serif;color:var(--gold);margin-bottom:10px}
+.method h3{font:600 1.25rem "Playfair Display",serif;margin:0 0 8px}
+.method p{color:var(--muted);margin:0;font-size:.94rem}
+.quote-band{background:linear-gradient(110deg,#17234f,#49266f 70%,#63328b);color:#fff;padding:64px 0;position:relative;overflow:hidden}
+.quote-band:after{content:"✿";position:absolute;right:8%;top:-55px;font-size:17rem;color:rgba(255,255,255,.055);line-height:1}
+.quote-inner{position:relative;z-index:1;max-width:850px;margin:auto;text-align:center}
+.quote-inner .eyebrow{color:#e9ca79}
+.quote-inner blockquote{font:500 clamp(1.8rem,3.4vw,2.8rem)/1.3 "Playfair Display",serif;margin:16px 0 14px}
+.quote-inner p{color:#e9e4f2;margin:0}
+.trajectory{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
+.trajectory-aside{background:linear-gradient(145deg,#f1e7f8,#fbf8fd);border-radius:26px;padding:30px;border:1px solid var(--line)}
+.big-number{font:700 4.2rem/1 "Playfair Display",serif;color:var(--purple)}
+.trajectory-aside p{color:var(--muted);margin:10px 0 0}
+.timeline{border-left:2px solid #e7d8f0;padding-left:27px}
+.timeline-item{position:relative;padding:0 0 26px}
+.timeline-item:before{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--gold);left:-34px;top:7px;box-shadow:0 0 0 5px #f7f0fb}
+.timeline-item h3{font:600 1.25rem "Playfair Display",serif;margin:0 0 5px}
+.timeline-item p{margin:0;color:var(--muted)}
+.cta{background:#fbf8fd;padding:58px 0;text-align:center}
+.cta h2{font:600 clamp(1.9rem,3vw,2.5rem) "Playfair Display",serif;margin:0 0 12px}
+.cta p{color:var(--muted);margin:0 auto 22px;max-width:620px}
+footer{background:#111d4b;color:#fff;padding:25px 0}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:18px}
+.footer-brand{font:600 1.35rem "Playfair Display",serif;letter-spacing:.12em}
+footer small{color:#d8d5e8}
+@media(max-width:850px){.hero-grid{gap:35px}.photo-frame{height:410px}.trajectory{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}}
+@media(max-width:680px){
+ .container{width:min(100% - 32px,600px)}.nav{min-height:68px}.navlinks{gap:13px;font-size:.78rem}
+ .nav .btn{display:none}.brand{font-size:1.25rem}
+ .hero{padding:42px 0 52px}.hero-grid{grid-template-columns:1fr;gap:35px}.photo-stage{max-width:330px;grid-row:1}.photo-frame{height:370px}
+ h1{font-size:2.65rem}.lead{font-size:1rem}
+ .section{padding:55px 0}.intro-grid{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}
+ .footer-row{flex-direction:column;text-align:center}
+}
+@media(max-width:430px){.navlinks{gap:9px;font-size:.72rem}.brand{font-size:1.08rem}.photo-frame{height:340px}.credential{font-size:.78rem}}
+</style>
 </head>
 <body>
 <header class="topbar">
-  <div class="container nav">
-    <a class="brand" href="index.html#inicio" aria-label="CENTAURIA, inicio"><img src="assets/logo-centauria.png" alt="CENTAURIA Centro de Salud Integral"></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav-links" id="navLinks">
-      <a href="index.html#inicio">Inicio</a><a href="index.html#centro">Nuestro centro</a><a href="index.html#servicios">Especialidades</a>
-      <a href="sobre-mi.html">Sobre mí</a><a href="index.html#empresas">Empresas</a><a href="index.html#blog">Blog</a><a href="index.html#contacto">Contacto</a>
-    </nav>
-    <a class="btn btn-primary" href="index.html#contacto">▦ Agenda tu consulta</a>
-  </div>
+ <div class="container nav">
+  <a class="brand" href="index.html" aria-label="CENTAURIA, volver al inicio"><img src="assets/logo-centauria.png" alt="CENTAURIA Centro de Salud Integral" style="width:190px;height:66px;object-fit:contain;object-position:left center"></a>
+  <nav class="navlinks">
+   <a href="index.html">Inicio</a><a class="active" href="sobre-mi_CENTAURIA.html">Sobre mí</a><a href="index.html#servicios">Especialidades</a><a href="index.html#empresas">Empresas</a><a href="index.html#blog">Blog</a><a href="index.html#contacto">Contacto</a>
+  </nav>
+  <a class="btn btn-primary" href="index.html#contacto">Agenda tu consulta</a>
+ </div>
 </header>
+
 <main>
-<section class="profile-section">
-  <div class="container">
-    <div class="profile-page-intro">
-      <div class="eyebrow">Mi historia y mi forma de trabajar</div>
-      <h1>Sobre mí</h1>
-      <p class="muted">Conoce mi formación, mi enfoque clínico y la filosofía que dio origen a CENTAURIA.</p>
-    </div>
-    <div class="profile-page-layout">
-      <div class="profile-page-photo">
-        <img src="assets/perfil-profesional.jpg" alt="Fotografía profesional de la nutricionista de CENTAURIA">
-      </div>
-      <div class="profile-page-copy">
-  <div class="eyebrow">Sobre mí</div>
-  <h2>Nutricionista con formación y enfoque en salud clínica.</h2>
-  <p class="profile-role">Nutricionista · Instructora de Yoga Integral · Estudiante de Medicina</p>
-  <p>Soy nutricionista, instructora de Yoga Integral y actualmente estudiante de Medicina. Desde hace más de 10 años he dedicado mi formación al área de la salud, complementando mis estudios con cursos y capacitaciones en nutrición, bienestar y salud integral.</p>
-  <p>Mi interés profesional está centrado en comprender la salud desde una perspectiva clínica, científica e integral, considerando que cada persona tiene una historia, necesidades y circunstancias particulares.</p>
-  <h3>Mi enfoque clínico</h3>
-  <p>Mi práctica se orienta al cambio de hábitos y al acompañamiento nutricional de personas con enfermedades crónicas y metabólicas.</p>
-  <div class="profile-specialties">
-    <span>Diabetes</span><span>Resistencia a la insulina</span><span>Hipertensión arterial</span><span>Hígado graso</span><span>Dislipidemias</span><span>Gota</span><span>Reflujo gastroesofágico</span><span>Obesidad</span><span>Síndrome de intestino irritable</span><span>Hipotiroidismo</span>
+<section class="hero">
+ <div class="container hero-grid">
+  <div class="photo-stage">
+   <div class="photo-halo"></div>
+   <div class="photo-frame"><img src="assets/perfil-profesional.jpg" alt="Retrato profesional de la nutricionista de CENTAURIA"></div>
+   <div class="photo-seal"><div><strong>10+</strong>años de formación<br>en salud</div></div>
   </div>
-  <p>Busco integrar la evidencia científica con una mirada individualizada, para que las recomendaciones nutricionales sean pertinentes, realistas y sostenibles en el tiempo.</p>
-  <h3>¿Cómo trabajo?</h3>
-  <p>Cada proceso comienza por conocer a la persona, comprender sus necesidades e identificar las principales dificultades que pueden estar interfiriendo en su salud.</p>
-  <p>A partir de esa evaluación, establecemos objetivos progresivos y personalizados, considerando su condición clínica, estilo de vida y etapa del proceso. Mi propósito es que cada paciente cuente con orientación profesional, herramientas prácticas y un acompañamiento que le permita avanzar de manera consciente y sostenible.</p>
-  <h3>¿Por qué nace CENTAURIA?</h3>
-  <p>CENTAURIA nace de la idea de crear un espacio propio, seguro y basado en la confianza, donde las personas puedan encontrar profesionales comprometidos con el conocimiento, la ciencia y, sobre todo, con la dimensión humana de la salud.</p>
-  <p>Creo que la atención en salud no debe limitarse a aplicar conocimientos o entregar indicaciones. Detrás de cada diagnóstico y de cada historia clínica hay una persona que merece ser escuchada, comprendida y tratada con respeto.</p>
-  <blockquote class="profile-quote">No se trata solamente de ser empático. Se trata de ser humano.</blockquote>
-</div>
-    </div>
-    <div style="text-align:center;margin-top:38px">
-      <a class="btn btn-outline" href="index.html">← Volver a la página principal</a>
-    </div>
+  <div class="hero-copy">
+   <div class="eyebrow">Conoce mi recorrido</div>
+   <h1>La salud se acompaña con <span>ciencia y humanidad.</span></h1>
+   <p class="lead">Soy nutricionista, instructora de Yoga Integral y estudiante de Medicina. Hace más de 10 años que mi camino está dedicado al estudio de la salud, con el propósito de ofrecer una atención clínica cercana, individualizada y basada en evidencia.</p>
+   <div class="credentials">
+    <span class="credential"><i>✦</i> Nutricionista</span>
+    <span class="credential"><i>✧</i> Yoga Integral</span>
+    <span class="credential"><i>＋</i> Estudiante de Medicina</span>
+   </div>
+   <p class="hero-note">Una mirada integral que une formación continua, criterio clínico y respeto por la historia de cada persona.</p>
   </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container">
+  <div class="section-heading">
+   <div class="eyebrow">Mi formación y visión</div>
+   <h2>Una mirada amplia de la salud</h2>
+   <p>Mi recorrido reúne distintas áreas de aprendizaje que enriquecen la forma en que entiendo el bienestar y el acompañamiento nutricional.</p>
+  </div>
+  <div class="intro-grid">
+   <article class="info-card">
+    <div class="card-icon">✧</div>
+    <h3>Formación continua</h3>
+    <p>Soy nutricionista, instructora de Yoga Integral y actualmente estudio Medicina. A lo largo de más de una década he complementado mi formación con cursos y capacitaciones vinculados a la salud y la nutrición.</p>
+   </article>
+   <article class="info-card">
+    <div class="card-icon">⚕</div>
+    <h3>Enfoque clínico y científico</h3>
+    <p>Me interesa comprender los procesos de salud y enfermedad desde una perspectiva clínica e integral, utilizando la evidencia científica como guía y adaptando cada recomendación a las necesidades de la persona.</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section clinical">
+ <div class="container">
+  <div class="section-heading">
+   <div class="eyebrow">Áreas de acompañamiento nutricional</div>
+   <h2>¿En qué puedo acompañarte?</h2>
+   <p>Mi práctica se orienta al cambio de hábitos y al acompañamiento nutricional en distintas condiciones crónicas y metabólicas.</p>
+  </div>
+  <div class="chips">
+   <span class="chip">Diabetes</span><span class="chip">Resistencia a la insulina</span>
+   <span class="chip">Hipertensión arterial</span><span class="chip">Hígado graso</span>
+   <span class="chip">Dislipidemias</span><span class="chip">Gota</span>
+   <span class="chip">Reflujo gastroesofágico</span><span class="chip">Obesidad</span>
+   <span class="chip">Síndrome de intestino irritable</span><span class="chip">Hipotiroidismo</span>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container">
+  <div class="section-heading">
+   <div class="eyebrow">Mi metodología</div>
+   <h2>Un proceso pensado para ti</h2>
+   <p>Cada persona llega con necesidades, experiencias y objetivos distintos. Por eso, el acompañamiento se construye paso a paso.</p>
+  </div>
+  <div class="method-grid">
+   <article class="method"><div class="method-number">01</div><h3>Conocer tu historia</h3><p>Comprender tus necesidades, antecedentes, estilo de vida y las dificultades que pueden estar influyendo en tu salud.</p></article>
+   <article class="method"><div class="method-number">02</div><h3>Definir objetivos</h3><p>Identificar prioridades y establecer metas progresivas, realistas y coherentes con tu situación y etapa de vida.</p></article>
+   <article class="method"><div class="method-number">03</div><h3>Acompañar tu proceso</h3><p>Entregar orientación y herramientas prácticas, revisando los avances para favorecer cambios conscientes y sostenibles.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="quote-band">
+ <div class="container quote-inner">
+  <div class="eyebrow">La filosofía de CENTAURIA</div>
+  <blockquote>«No se trata solamente de ser empático. Se trata de ser humano».</blockquote>
+  <p>Creo en una atención donde el conocimiento y la ciencia conviven con el respeto, la escucha y la comprensión de cada historia.</p>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container trajectory">
+  <aside class="trajectory-aside">
+   <div class="eyebrow">Mi recorrido</div>
+   <div class="big-number">10+</div>
+   <h2 class="serif">años dedicados al estudio de la salud</h2>
+   <p>Una trayectoria de aprendizaje y actualización continua que sigue creciendo.</p>
+  </aside>
+  <div>
+   <div class="eyebrow">Formación y desarrollo</div>
+   <h2 class="serif" style="font-size:2.2rem;margin:8px 0 24px">Aprender para acompañar mejor</h2>
+   <div class="timeline">
+    <div class="timeline-item"><h3>Nutrición</h3><p>Formación profesional como nutricionista y desarrollo de una práctica enfocada en la salud y la alimentación.</p></div>
+    <div class="timeline-item"><h3>Yoga Integral</h3><p>Formación como instructora de Yoga Integral, incorporando una perspectiva complementaria del bienestar.</p></div>
+    <div class="timeline-item"><h3>Medicina y actualización continua</h3><p>Actualmente estudiante de Medicina. Continúo profundizando mis conocimientos mediante estudios, cursos y capacitaciones en salud y nutrición.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="container">
+  <div class="eyebrow">CENTAURIA · Centro de Salud Integral</div>
+  <h2>Construyamos objetivos para tu salud.</h2>
+  <p>Si buscas orientación nutricional con un enfoque clínico, personalizado y basado en evidencia, podemos comenzar conociendo tu historia y tus necesidades.</p>
+  <a class="btn btn-primary" href="index.html#contacto">Consultar por una atención <span>→</span></a>
+ </div>
 </section>
 </main>
-<footer>
-  <div class="container footer-row">
-    <div><div class="footer-brand">CENTAURIA</div><small>Centro de Salud Integral · Ciencia y profesionales al servicio de tu bienestar.</small></div>
-    <small>© <span id="year"></span> CENTAURIA. Todos los derechos reservados.</small>
-  </div>
-</footer>
-<script>
-  const menuToggle=document.getElementById("menuToggle");
-  const navLinks=document.getElementById("navLinks");
-  menuToggle.addEventListener("click",()=>{
-    const open=navLinks.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded",String(open));
-    menuToggle.textContent=open?"×":"☰";
-  });
-  navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
-    navLinks.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");menuToggle.textContent="☰";
-  }));
-  document.getElementById("contactForm").addEventListener("submit",e=>{
-    e.preventDefault();
-    alert("El formulario está preparado. Para recibir mensajes, primero configuraremos tu número de WhatsApp profesional.");
-  });
-  document.getElementById("year").textContent=new Date().getFullYear();
-</script>
+
+<footer><div class="container footer-row"><div><div class="footer-brand">CENTAURIA</div><small>Centro de Salud Integral · Ciencia y profesionales al servicio de tu bienestar.</small></div><small>© <span id="year"></span> CENTAURIA. Todos los derechos reservados.</small></div></footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
