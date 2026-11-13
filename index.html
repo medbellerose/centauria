@@ -132,19 +132,20 @@
       .footer-row{flex-direction:column;text-align:center}
     }
 
-    /* Perfil profesional CENTAURIA */
-    .profile-section{background:linear-gradient(110deg,#f7f1fb,#fff 58%,#f4eff9)}
-    .profile-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start}
-    .profile-photo{height:490px;overflow:hidden;border-radius:30px 30px 100px 30px;box-shadow:var(--shadow)}
-    .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
-    .profile-copy h2{font-size:clamp(2.1rem,3.5vw,2.8rem);margin:8px 0}
-    .profile-role{color:var(--purple);font-weight:700}
-    .profile-copy p{color:#56617d}
-    .profile-copy h3{font-family:"Playfair Display",Georgia,serif;font-size:1.4rem;margin:25px 0 8px}
-    .profile-specialties{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
-    .profile-specialties span{background:#fff;border:1px solid var(--line);border-radius:30px;padding:7px 12px;font-size:.83rem;color:var(--navy)}
-    .profile-quote{border-left:3px solid var(--gold);padding:16px 20px;background:#fff;color:var(--navy);font-family:"Playfair Display",Georgia,serif;font-size:1.2rem;margin-top:25px}
-    @media(max-width:700px){.profile-grid{grid-template-columns:1fr;gap:28px}.profile-photo{height:400px}.profile-copy h2{font-size:2.2rem}}
+    /* Presentación breve en la página de inicio */
+    .profile-teaser{background:linear-gradient(110deg,#f7f1fb,#fff 58%,#f4eff9)}
+    .profile-teaser-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+    .profile-teaser-photo{height:390px;max-width:420px;overflow:hidden;border-radius:30px 30px 95px 30px;box-shadow:var(--shadow);background:#f2eaf8}
+    .profile-teaser-photo img{width:100%;height:100%;object-fit:cover;object-position:center 24%}
+    .profile-teaser-copy h2{font-size:clamp(2rem,3.4vw,2.8rem);margin:9px 0 12px}
+    .profile-teaser-copy p{color:#56617d}
+    .profile-teaser-copy .profile-role{font-weight:700;color:var(--purple)}
+    .profile-more{margin-top:8px}
+    @media(max-width:700px){
+      .profile-teaser-grid{grid-template-columns:1fr;gap:25px}
+      .profile-teaser-photo{height:340px;max-width:100%}
+    }
+
   </style>
 </head>
 <body>
@@ -176,7 +177,7 @@
     </div>
   </section>
 
-    <section class="services" id="servicios">
+  <section class="services" id="servicios">
     <div class="container">
       <div class="section-heading">
         <div class="eyebrow">Áreas de atención</div>
@@ -192,37 +193,20 @@
 
 
   <section class="about" id="centro"><div class="container about-grid"><div class="about-placeholder"><img src="assets/logo-centauria.png" alt="Emblema CENTAURIA"></div><div class="about-copy"><div class="eyebrow">Quiénes somos</div><h2>Una visión integral de la salud.</h2><p>CENTAURIA nace con la idea de acercar distintas áreas del conocimiento y la atención profesional en un mismo espacio digital.</p><p>Creemos en una atención que considera a la persona en sus distintas dimensiones y facilita el acceso a profesionales de diversas disciplinas.</p><div class="pills"><span class="pill">Ciencia</span><span class="pill">Salud</span><span class="pill">Colaboración profesional</span><span class="pill">Bienestar</span></div></div></div></section>
-  <section class="profile-section" id="sobre-mi">
-  <div class="container">
-    <div class="profile-grid">
-      <div>
-        <div class="profile-photo">
-          <img src="assets/perfil-profesional.jpg" alt="Fotografía profesional de la nutricionista de CENTAURIA">
-        </div>
+  <section class="profile-teaser" id="sobre-mi">
+    <div class="container profile-teaser-grid">
+      <div class="profile-teaser-photo">
+        <img src="assets/perfil-profesional.jpg" alt="Fotografía profesional de la nutricionista de CENTAURIA">
       </div>
-      <div class="profile-copy">
-        <div class="eyebrow">Sobre mí</div>
-        <h2>Nutricionista con formación y enfoque en salud clínica.</h2>
+      <div class="profile-teaser-copy">
+        <div class="eyebrow">Conoce a quien está detrás de CENTAURIA</div>
+        <h2>Una mirada clínica, científica y humana de la salud.</h2>
         <p class="profile-role">Nutricionista · Instructora de Yoga Integral · Estudiante de Medicina</p>
-        <p>Soy nutricionista, instructora de Yoga Integral y actualmente estudiante de Medicina. Desde hace más de 10 años he dedicado mi formación al área de la salud, complementando mis estudios con cursos y capacitaciones en nutrición, bienestar y salud integral.</p>
-        <p>Mi interés profesional está centrado en comprender la salud desde una perspectiva clínica, científica e integral, considerando que cada persona tiene una historia, necesidades y circunstancias particulares.</p>
-        <h3>Mi enfoque clínico</h3>
-        <p>Mi práctica se orienta al cambio de hábitos y al acompañamiento nutricional de personas con enfermedades crónicas y metabólicas.</p>
-        <div class="profile-specialties">
-          <span>Diabetes</span><span>Resistencia a la insulina</span><span>Hipertensión arterial</span><span>Hígado graso</span><span>Dislipidemias</span><span>Gota</span><span>Reflujo gastroesofágico</span><span>Obesidad</span><span>Síndrome de intestino irritable</span><span>Hipotiroidismo</span>
-        </div>
-        <p>Busco integrar la evidencia científica con una mirada individualizada, para que las recomendaciones nutricionales sean pertinentes, realistas y sostenibles en el tiempo.</p>
-        <h3>¿Cómo trabajo?</h3>
-        <p>Cada proceso comienza por conocer a la persona, comprender sus necesidades e identificar las principales dificultades que pueden estar interfiriendo en su salud.</p>
-        <p>A partir de esa evaluación, establecemos objetivos progresivos y personalizados, considerando su condición clínica, estilo de vida y etapa del proceso. Mi propósito es que cada paciente cuente con orientación profesional, herramientas prácticas y un acompañamiento que le permita avanzar de manera consciente y sostenible.</p>
-        <h3>¿Por qué nace CENTAURIA?</h3>
-        <p>CENTAURIA nace de la idea de crear un espacio propio, seguro y basado en la confianza, donde las personas puedan encontrar profesionales comprometidos con el conocimiento, la ciencia y, sobre todo, con la dimensión humana de la salud.</p>
-        <p>Creo que la atención en salud no debe limitarse a aplicar conocimientos o entregar indicaciones. Detrás de cada diagnóstico y de cada historia clínica hay una persona que merece ser escuchada, comprendida y tratada con respeto.</p>
-        <blockquote class="profile-quote">No se trata solamente de ser empático. Se trata de ser humano.</blockquote>
+        <p>Soy nutricionista y desde hace más de 10 años me he dedicado a formarme en el área de la salud. Mi trabajo integra el conocimiento científico con una atención cercana y personalizada, porque cada persona merece un acompañamiento que considere su historia y sus necesidades.</p>
+        <a class="btn btn-primary profile-more" href="sobre-mi_CENTAURIA.html">Conoce más sobre mí <span aria-hidden="true">→</span></a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
   <section class="blog" id="blog">
     <div class="container blog-grid">
       <div class="blog-intro">
